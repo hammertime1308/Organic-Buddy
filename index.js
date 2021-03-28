@@ -1,5 +1,4 @@
 import { AppRegistry } from 'react-native';
-import App from './App';
-import { name } from './app.json';
+import App from './src/App';
 
-AppRegistry.registerComponent(name, () => App);
+AppRegistry.registerComponent('OrganicBuddy', () => App);
