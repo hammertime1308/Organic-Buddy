@@ -1,6 +1,6 @@
 const BASE_URL = 'https://organic-buddy-api.herokuapp.com';
 
-export default {
+export const Endpoints = {
   LOGIN: BASE_URL + '/login',
   DELETE_USER: BASE_URL + '/login/',
   SIGNUP: BASE_URL + '/signup',
