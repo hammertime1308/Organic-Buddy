@@ -1,0 +1,25 @@
+import React from 'react';
+import styled from 'styled-components';
+import Icon from 'react-native-vector-icons/Ionicons';
+
+import { COLOR } from '../../styles';
+
+const CartContainer = styled.TouchableOpacity`
+  background-color: ${COLOR.GreenHeader};
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  elevation: 5;
+  shadowColor: ${COLOR.Black};
+  shadowOffset: { width: 0, height: 3};
+`;
+
+export const Cart = ({ onPress = () => {} }) => {
+  return (
+    <CartContainer activeOpacity={0.7} onPress={onPress}>
+      <Icon name="ios-cart-outline" size={40} color={COLOR.White} />
+    </CartContainer>
+  );
+};

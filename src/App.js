@@ -1,16 +1,13 @@
 import React from 'react';
-import { Text } from 'react-native';
 
-import { Endpoints } from './api';
+import { Shop } from './containers';
 
 const App = () => {
   // show landing screen
   // check if logged in
   // if logged in -> go to dashboard
   // else show info screens
-
-  console.log(Endpoints.LOGIN);
-  return <Text>{Endpoints.LOGIN}</Text>;
+  return <Shop />;
 };
 
 export default App;
