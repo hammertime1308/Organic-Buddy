@@ -54,7 +54,7 @@ export const Shop = () => {
         </Container>
       </View>
       <RenderScreen />
-      <Footer />
+      <Footer selected="shop" />
       <View style={{ position: 'absolute', bottom: '12%', right: '5%' }}>
         <Cart onPress={() => alert('Cart pressed')} />
       </View>
