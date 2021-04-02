@@ -15,7 +15,7 @@ export const NormalView = styled.TouchableOpacity`
   flex: 1;
   justify-content: center;
   align-items: center;
-  margin: 3px;
+  margin: 5px;
 `;
 
 export const SelectedView = styled.TouchableOpacity`
@@ -23,14 +23,15 @@ export const SelectedView = styled.TouchableOpacity`
   flex: 1;
   justify-content: center;
   align-items: center;
-  margin: 3px;
+  margin: 5px;
   border-radius: 6px;
 
-  elevation: 10;
+  elevation: 3;
 `;
 
 export const TextUnselected = styled.Text`
   font-size: ${FONT.FontSizeSmall};
+  font-weight: ${FONT.FontWeightBold};
   width: 100%;
   text-align: center;
   color: ${COLOR.GreenHeader};
@@ -38,6 +39,8 @@ export const TextUnselected = styled.Text`
 
 export const TextSelected = styled.Text`
   font-size: ${FONT.FontSizeSmall};
+  font-weight: ${FONT.FontWeightBold};
+  color: ${COLOR.WhiteSelectedText};
   width: 100%;
   text-align: center;
 `;

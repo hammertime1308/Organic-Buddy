@@ -11,7 +11,7 @@ export const COLOR = {
 export const FONT = {
   FontSizeNormal: '15px',
   FontSizeHeader: '20px',
-  FontSizeSmall: '10px',
+  FontSizeSmall: '12px',
   FontWeightSlightBold: '600',
   FontWeightBold: '700',
 };
