@@ -4,10 +4,13 @@ import { Image } from 'react-native';
 import { StyledCard, Title, Description, Price } from './styles';
 
 export const Card = ({
-  title = 'Title',
-  description = 'Description of product',
-  price = 0,
-  imageUri = 'https://cdn.croptrust.org/wp/wp-content/uploads/2014/12/about-us.jpg',
+  id = '',
+  productName = 'Title',
+  productDescription = 'Description',
+  productPrice = 0,
+  productImages = [
+    'https://cdn.croptrust.org/wp/wp-content/uploads/2014/12/about-us.jpg',
+  ],
   onPress = () => {},
 }) => {
   return (
@@ -19,12 +22,12 @@ export const Card = ({
           resizeMode: 'cover',
         }}
         source={{
-          uri: `${imageUri}`,
+          uri: `${productImages[0]}`,
         }}
       />
-      <Title>{title}</Title>
-      <Description>{description}</Description>
-      <Price>Price: {price} Rs</Price>
+      <Title>{productName}</Title>
+      <Description>{productDescription}</Description>
+      <Price>Price: {productPrice} Rs</Price>
     </StyledCard>
   );
 };
