@@ -38,7 +38,7 @@ export const Post = ({
             source={{ uri: image[0] }}
           />
         ) : (
-          <Text />
+          <Text style={{ height: 120 }} />
         )}
         <ColumnContainer>
           <Title>{title}</Title>
