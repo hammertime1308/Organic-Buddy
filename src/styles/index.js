@@ -6,6 +6,7 @@ export const COLOR = {
   GreenHeader: 'rgba(76, 154, 42, 1)',
   BlackBorder: 'rgba(0, 0, 0, 0.01)',
   FooterUnselectedBackground: 'rgba(240, 240, 240,0.8)',
+  GrayColor: 'rgba(191, 191, 191, 1)',
 };
 
 export const FONT = {

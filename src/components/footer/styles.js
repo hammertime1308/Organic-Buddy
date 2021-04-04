@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 import { COLOR, FONT } from '../../styles';
 
 export const StyledFooter = styled.View`
-  height: 80;
+  height: 10%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
