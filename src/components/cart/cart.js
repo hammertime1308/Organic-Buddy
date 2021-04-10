@@ -6,8 +6,8 @@ import { COLOR } from '../../styles';
 
 const CartContainer = styled.TouchableOpacity`
   background-color: ${COLOR.GreenHeader};
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50px;
   justify-content: center;
   align-items: center;
@@ -19,7 +19,7 @@ const CartContainer = styled.TouchableOpacity`
 export const Cart = ({ onPress = () => {} }) => {
   return (
     <CartContainer activeOpacity={0.7} onPress={onPress}>
-      <Icon name="ios-cart-outline" size={40} color={COLOR.White} />
+      <Icon name="ios-cart-outline" size={30} color={COLOR.White} />
     </CartContainer>
   );
 };

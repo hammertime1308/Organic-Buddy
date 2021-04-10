@@ -15,7 +15,7 @@ export const Footer = ({ selected = '' }) => {
       {selected === 'dashboard' ? (
         <SelectedView activeOpacity={0.8} onPress={() => {}}>
           <Image
-            style={{ width: 40, height: 40, marginTop: 3 }}
+            style={{ width: 35, height: 35, marginTop: 3, marginBottom: 5 }}
             source={require('../../assets/icons/dashboard.png')}
           />
           <TextSelected>Dashboard</TextSelected>
@@ -25,7 +25,7 @@ export const Footer = ({ selected = '' }) => {
           activeOpacity={0.8}
           onPress={() => alert('dashboard pressed')}>
           <Image
-            style={{ width: 40, height: 40, marginTop: 3 }}
+            style={{ width: 35, height: 35, marginTop: 3, marginBottom: 5 }}
             source={require('../../assets/icons/dashboard.png')}
           />
           <TextUnselected>Dashboard</TextUnselected>
@@ -35,7 +35,7 @@ export const Footer = ({ selected = '' }) => {
       {selected === 'shop' ? (
         <SelectedView activeOpacity={0.8} onPress={() => {}}>
           <Image
-            style={{ width: 40, height: 40, marginTop: 3 }}
+            style={{ width: 35, height: 35, marginTop: 3, marginBottom: 5 }}
             source={require('../../assets/icons/shop.png')}
           />
           <TextSelected>Shop</TextSelected>
@@ -43,7 +43,7 @@ export const Footer = ({ selected = '' }) => {
       ) : (
         <NormalView activeOpacity={0.8} onPress={() => alert('Shop pressed')}>
           <Image
-            style={{ width: 40, height: 40, marginTop: 3 }}
+            style={{ width: 35, height: 35, marginTop: 3, marginBottom: 5 }}
             source={require('../../assets/icons/shop.png')}
           />
           <TextUnselected>Shop</TextUnselected>
@@ -53,7 +53,7 @@ export const Footer = ({ selected = '' }) => {
       {selected === 'getHelp' ? (
         <SelectedView activeOpacity={0.8} onPress={() => {}}>
           <Image
-            style={{ width: 40, height: 40, marginTop: 3 }}
+            style={{ width: 35, height: 35, marginTop: 3, marginBottom: 5 }}
             source={require('../../assets/icons/getHelp.png')}
           />
           <TextSelected>Get Help</TextSelected>
@@ -63,7 +63,7 @@ export const Footer = ({ selected = '' }) => {
           activeOpacity={0.8}
           onPress={() => alert('Get Help pressed')}>
           <Image
-            style={{ width: 40, height: 40, marginTop: 3 }}
+            style={{ width: 35, height: 35, marginTop: 3, marginBottom: 5 }}
             source={require('../../assets/icons/getHelp.png')}
           />
           <TextUnselected>Get Help</TextUnselected>
@@ -73,7 +73,7 @@ export const Footer = ({ selected = '' }) => {
       {selected === 'learn' ? (
         <SelectedView activeOpacity={0.8} onPress={() => {}}>
           <Image
-            style={{ width: 40, height: 40, marginTop: 3 }}
+            style={{ width: 35, height: 35, marginTop: 3, marginBottom: 5 }}
             source={require('../../assets/icons/learn.png')}
           />
           <TextSelected>Learn</TextSelected>
@@ -81,7 +81,7 @@ export const Footer = ({ selected = '' }) => {
       ) : (
         <NormalView activeOpacity={0.8} onPress={() => alert('Learn pressed')}>
           <Image
-            style={{ width: 40, height: 40, marginTop: 3 }}
+            style={{ width: 35, height: 35, marginTop: 3, marginBottom: 5 }}
             source={require('../../assets/icons/learn.png')}
           />
           <TextUnselected>Learn</TextUnselected>
