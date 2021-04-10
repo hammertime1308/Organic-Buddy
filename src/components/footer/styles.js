@@ -8,6 +8,8 @@ export const StyledFooter = styled.View`
   flex-direction: row;
   justify-content: space-evenly;
   background-color: ${COLOR.FooterUnselectedBackground};
+  border-color: ${COLOR.GreenHeader};
+  border-top-width: 2px;
 `;
 
 export const NormalView = styled.TouchableOpacity`
