@@ -1,25 +1,42 @@
 import { createAppContainer } from 'react-navigation';
-import {
-  createStackNavigator,
-  TransitionPresets,
-} from 'react-navigation-stack';
+import { createStackNavigator } from 'react-navigation-stack';
 
-import { Dashboard, Shop } from '../containers';
+import {
+  Shop,
+  GetHelp,
+  Dashboard,
+  Learn,
+  FlashScreen,
+  UserAuth,
+  LandingPage,
+} from '../containers';
 
 const Screens = {
+  LandingPage: {
+    screen: LandingPage,
+  },
+  FlashScreen: {
+    screen: FlashScreen,
+  },
+  GetHelp: {
+    screen: GetHelp,
+  },
   Shop: {
     screen: Shop,
   },
   Dashboard: {
     screen: Dashboard,
   },
+  Learn: {
+    screen: Learn,
+  },
+  UserAuth: {
+    screen: UserAuth,
+  },
 };
 
 const AppNavigator = createStackNavigator(Screens, {
   headerMode: 'none',
-  defaultNavigationOptions: {
-    ...TransitionPresets.SlideFromRightIOS,
-  },
 });
 
 export default createAppContainer(AppNavigator);

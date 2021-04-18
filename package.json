@@ -17,10 +17,13 @@
     ]
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.15.2",
     "@react-native-community/masked-view": "^0.1.10",
+    "axios": "^0.21.1",
     "moment": "^2.29.1",
     "react": "17.0.1",
     "react-native": "0.64.0",
+    "react-native-app-intro-slider": "^4.0.4",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-reanimated": "^2.1.0",
     "react-native-safe-area-context": "^3.2.0",

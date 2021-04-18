@@ -1,3 +1,4 @@
-import { Endpoints } from './endpoints';
+import axios, { Endpoints } from './endpoints';
+import { login, signUp } from './helper';
 
-export { Endpoints };
+export { axios, Endpoints, login, signUp };

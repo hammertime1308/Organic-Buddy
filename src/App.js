@@ -1,20 +1,20 @@
 import 'react-native-gesture-handler';
-import React from 'react';
+import React, { useState } from 'react';
 
 import Navigator from './navigation';
 import { NavigationService } from './utilities';
+import Context from './context';
 
 const App = () => {
-  // show landing screen
-  // check if logged in
-  // if logged in -> go to dashboard
-  // else show info screens
+  const [context, setContext] = useState({ user: null });
   return (
-    <Navigator
-      ref={r => {
-        NavigationService.setTopLevelNavigator(r);
-      }}
-    />
+    <Context.Provider value={[context, setContext]}>
+      <Navigator
+        ref={r => {
+          NavigationService.setTopLevelNavigator(r);
+        }}
+      />
+    </Context.Provider>
   );
 };
 

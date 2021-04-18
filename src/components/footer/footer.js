@@ -1,6 +1,8 @@
 import React from 'react';
 import { Image } from 'react-native';
 
+import { NavigationService } from '../../utilities';
+
 import {
   TextSelected,
   TextUnselected,
@@ -23,7 +25,7 @@ export const Footer = ({ selected = '' }) => {
       ) : (
         <NormalView
           activeOpacity={0.8}
-          onPress={() => alert('dashboard pressed')}>
+          onPress={() => NavigationService.navigate('Dashboard')}>
           <Image
             style={{ width: 35, height: 35, marginTop: 3, marginBottom: 5 }}
             source={require('../../assets/icons/dashboard.png')}
@@ -41,7 +43,9 @@ export const Footer = ({ selected = '' }) => {
           <TextSelected>Shop</TextSelected>
         </SelectedView>
       ) : (
-        <NormalView activeOpacity={0.8} onPress={() => alert('Shop pressed')}>
+        <NormalView
+          activeOpacity={0.8}
+          onPress={() => NavigationService.navigate('Shop')}>
           <Image
             style={{ width: 35, height: 35, marginTop: 3, marginBottom: 5 }}
             source={require('../../assets/icons/shop.png')}
@@ -61,7 +65,7 @@ export const Footer = ({ selected = '' }) => {
       ) : (
         <NormalView
           activeOpacity={0.8}
-          onPress={() => alert('Get Help pressed')}>
+          onPress={() => NavigationService.navigate('GetHelp')}>
           <Image
             style={{ width: 35, height: 35, marginTop: 3, marginBottom: 5 }}
             source={require('../../assets/icons/getHelp.png')}
@@ -79,7 +83,9 @@ export const Footer = ({ selected = '' }) => {
           <TextSelected>Learn</TextSelected>
         </SelectedView>
       ) : (
-        <NormalView activeOpacity={0.8} onPress={() => alert('Learn pressed')}>
+        <NormalView
+          activeOpacity={0.8}
+          onPress={() => NavigationService.navigate('Learn')}>
           <Image
             style={{ width: 35, height: 35, marginTop: 3, marginBottom: 5 }}
             source={require('../../assets/icons/learn.png')}
