@@ -6,7 +6,7 @@ import { NavigationService } from './utilities';
 import Context from './context';
 
 const App = () => {
-  const [context, setContext] = useState({ user: null });
+  const [context, setContext] = useState();
   return (
     <Context.Provider value={[context, setContext]}>
       <Navigator
