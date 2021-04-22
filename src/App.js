@@ -7,6 +7,7 @@ import Context from './context';
 
 const App = () => {
   const [context, setContext] = useState();
+  console.disableYellowBox = true;
   return (
     <Context.Provider value={[context, setContext]}>
       <Navigator
