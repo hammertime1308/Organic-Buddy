@@ -14,7 +14,7 @@ export const LandingPage = () => {
       if (data === null) {
         NavigationService.navigate('FlashScreen');
       } else {
-        setContext({ user: data });
+        setContext({ user: JSON.parse(data) });
         NavigationService.navigate('Dashboard');
       }
     } catch (e) {

@@ -1,4 +1,4 @@
 import axios, { Endpoints } from './endpoints';
-import { login, signUp } from './helper';
+import { login, signUp, getDashboardData } from './helper';
 
-export { axios, Endpoints, login, signUp };
+export { axios, Endpoints, login, signUp, getDashboardData };

@@ -1,3 +1,5 @@
+import { get } from 'lodash';
+
 import { axios, Endpoints } from '../api';
 
 export const login = (email, password) =>
@@ -8,8 +10,8 @@ export const login = (email, password) =>
     })
     .catch(error => {
       return {
-        status: error.response.status,
-        data: error.response.data.Message,
+        status: get(error, 'response.status', 'no status'),
+        data: get(error, 'response.data.Message', error.message),
       };
     });
 
@@ -27,7 +29,20 @@ export const signUp = (firstName, lastName, email, contact, password) =>
     })
     .catch(error => {
       return {
-        status: error.response.status,
-        data: error.response.data.Message,
+        status: get(error, 'response.status', 'no status'),
+        data: get(error, 'response.data.Message', error.message),
+      };
+    });
+
+export const getDashboardData = userId =>
+  axios
+    .get(Endpoints.GET_DASHBOARD_DATA + `/${userId}`)
+    .then(result => {
+      return { status: result.status, data: result.data };
+    })
+    .catch(error => {
+      return {
+        status: get(error, 'response.status', 'no status'),
+        data: get(error, 'response.data.Message', error.message),
       };
     });

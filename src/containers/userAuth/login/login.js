@@ -40,7 +40,7 @@ export const LoginScreen = () => {
             '@userData',
             JSON.stringify(response.data),
           );
-          setContext({ user: response.data });
+          await setContext({ user: response.data });
           NavigationService.navigate('Dashboard');
         } catch (e) {
           console.error(e);
@@ -52,6 +52,8 @@ export const LoginScreen = () => {
         alert(response.data);
         setEmail('');
         setPassword('');
+      } else {
+        alert(response.data);
       }
       setLoading(false);
     } else {
