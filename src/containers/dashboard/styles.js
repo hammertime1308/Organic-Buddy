@@ -52,7 +52,7 @@ export const DetailCardContainer = styled.View`
 export const AvatarDetailContainer = styled.View`
   flex-direction: row;
   position: absolute;
-  top: 20%;
+  top: 15%;
   left: 5%;
   right: 5%;
 `;
@@ -117,4 +117,18 @@ export const CardContainer = styled.View`
   margin-top: 60px;
   margin-left: 20px;
   margin-right: 20px;
+`;
+
+export const LogoutButton = styled.TouchableOpacity`
+  background-color: #f0f0f0;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  border-radius: 3px;
+  elevation: 3;
+`;
+
+export const LogoutText = styled.Text`
+  padding: 8px;
+  font-weight: bold;
 `;

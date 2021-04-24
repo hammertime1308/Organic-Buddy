@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Text, View, ActivityIndicator } from 'react-native';
 import Moment from 'moment';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import Context from '../../context';
 import { Footer, Header } from '../../components';
 
 import { getDashboardData } from '../../api';
+import { NavigationService } from '../../utilities';
 
 import {
   UserAvatarContainer,
@@ -23,6 +25,8 @@ import {
   CardFooter,
   Card,
   CardContainer,
+  LogoutButton,
+  LogoutText,
 } from './styles';
 
 export const Dashboard = () => {
@@ -57,9 +61,19 @@ export const Dashboard = () => {
         <Header>Dashboard</Header>
         <GreenCurvature />
         <AvatarDetailContainer>
-          <UserAvatarContainer>
-            <UserAvatar source={require('../../assets/icons/farmer.png')} />
-          </UserAvatarContainer>
+          <View>
+            <UserAvatarContainer>
+              <UserAvatar source={require('../../assets/icons/farmer.png')} />
+            </UserAvatarContainer>
+            <LogoutButton
+              activeOpacity={0.9}
+              onPress={async () => {
+                await AsyncStorage.clear();
+                NavigationService.navigate('UserAuth');
+              }}>
+              <LogoutText>Logout</LogoutText>
+            </LogoutButton>
+          </View>
           <DetailCardContainer>
             <NameText>
               {user.firstName} {user.lastName}
