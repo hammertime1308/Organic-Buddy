@@ -40,7 +40,7 @@ export const LoginScreen = () => {
             '@userData',
             JSON.stringify(response.data),
           );
-          await setContext({ user: response.data });
+          setContext(prevState => prevState.set('user', response.data));
           NavigationService.navigate('Dashboard');
         } catch (e) {
           console.error(e);

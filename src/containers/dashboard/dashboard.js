@@ -31,7 +31,7 @@ import {
 
 export const Dashboard = () => {
   const [context, setContext] = useContext(Context);
-  const user = context.user;
+  const user = context.get('user');
 
   Moment.locale('en');
   const [loading, setLoading] = useState(true);

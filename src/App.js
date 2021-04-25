@@ -6,7 +6,7 @@ import { NavigationService } from './utilities';
 import Context from './context';
 
 const App = () => {
-  const [context, setContext] = useState();
+  const [context, setContext] = useState(new Map());
   console.disableYellowBox = true;
   return (
     <Context.Provider value={[context, setContext]}>
