@@ -41,7 +41,7 @@ export const LoginScreen = () => {
             JSON.stringify(response.data),
           );
           setContext(prevState => prevState.set('user', response.data));
-          NavigationService.navigate('Dashboard');
+          NavigationService.replace('Dashboard');
         } catch (e) {
           console.error(e);
         }

@@ -12,10 +12,10 @@ export const LandingPage = () => {
     try {
       const data = await AsyncStorage.getItem('@userData');
       if (data === null) {
-        NavigationService.navigate('FlashScreen');
+        NavigationService.replace('FlashScreen');
       } else {
         setContext(prevState => prevState.set('user', JSON.parse(data)));
-        NavigationService.navigate('Dashboard');
+        NavigationService.replace('Dashboard');
       }
     } catch (e) {
       alert(e);

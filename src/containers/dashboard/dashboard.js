@@ -69,7 +69,7 @@ export const Dashboard = () => {
               activeOpacity={0.9}
               onPress={async () => {
                 await AsyncStorage.clear();
-                NavigationService.navigate('UserAuth');
+                NavigationService.replace('UserAuth');
               }}>
               <LogoutText>Logout</LogoutText>
             </LogoutButton>

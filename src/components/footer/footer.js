@@ -25,7 +25,7 @@ export const Footer = ({ selected = '' }) => {
       ) : (
         <NormalView
           activeOpacity={0.8}
-          onPress={() => NavigationService.navigate('Dashboard')}>
+          onPress={() => NavigationService.replace('Dashboard')}>
           <Image
             style={{ width: 35, height: 35, marginTop: 3, marginBottom: 5 }}
             source={require('../../assets/icons/dashboard.png')}
@@ -45,7 +45,7 @@ export const Footer = ({ selected = '' }) => {
       ) : (
         <NormalView
           activeOpacity={0.8}
-          onPress={() => NavigationService.navigate('Shop')}>
+          onPress={() => NavigationService.replace('Shop')}>
           <Image
             style={{ width: 35, height: 35, marginTop: 3, marginBottom: 5 }}
             source={require('../../assets/icons/shop.png')}
@@ -65,7 +65,7 @@ export const Footer = ({ selected = '' }) => {
       ) : (
         <NormalView
           activeOpacity={0.8}
-          onPress={() => NavigationService.navigate('GetHelp')}>
+          onPress={() => NavigationService.replace('GetHelp')}>
           <Image
             style={{ width: 35, height: 35, marginTop: 3, marginBottom: 5 }}
             source={require('../../assets/icons/getHelp.png')}
@@ -85,7 +85,7 @@ export const Footer = ({ selected = '' }) => {
       ) : (
         <NormalView
           activeOpacity={0.8}
-          onPress={() => NavigationService.navigate('Learn')}>
+          onPress={() => NavigationService.replace('Learn')}>
           <Image
             style={{ width: 35, height: 35, marginTop: 3, marginBottom: 5 }}
             source={require('../../assets/icons/learn.png')}

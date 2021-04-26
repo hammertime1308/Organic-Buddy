@@ -81,8 +81,8 @@ export const FlashScreen = () => {
       renderNextButton={() => renderButton('Next')}
       renderSkipButton={() => renderButton('Skip')}
       renderDoneButton={() => renderButton('Done')}
-      onDone={() => NavigationService.navigate('UserAuth')}
-      onSkip={() => NavigationService.navigate('UserAuth')}
+      onDone={() => NavigationService.replace('UserAuth')}
+      onSkip={() => NavigationService.replace('UserAuth')}
       showSkipButton
     />
     //
