@@ -5,5 +5,15 @@ import { Learn } from './learn/learn';
 import { FlashScreen } from './flashScreen/flashScreen';
 import { UserAuth } from './userAuth/userAuth';
 import { LandingPage } from './landingPage/LandingPage';
+import { DetailedScreenFS } from './detailedFertilizer&Seeds/detailedScreen';
 
-export { Shop, GetHelp, Dashboard, Learn, FlashScreen, UserAuth, LandingPage };
+export {
+  Shop,
+  GetHelp,
+  Dashboard,
+  Learn,
+  FlashScreen,
+  UserAuth,
+  LandingPage,
+  DetailedScreenFS,
+};

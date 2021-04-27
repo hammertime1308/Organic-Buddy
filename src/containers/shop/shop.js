@@ -1,15 +1,37 @@
-import React, { useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { View } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { Header, Footer, Cart } from '../../components';
 import { FertilizersScreen } from './fertilizer/fertilizersScreen';
 import { SeedScreen } from './seeds/seedsScreen';
 import { EquipmentScreen } from './equipments/equipmentsScren';
 
+import Context from '../../context';
+
 import { ButtonText, Container, SelectedButtonText } from './styles';
 
 export const Shop = () => {
   const [index, setIndex] = useState(1);
+
+  const [context, setContext] = useContext(Context);
+
+  useEffect(() => {
+    try {
+      async function getSavedCart() {
+        let data = await AsyncStorage.getItem('@cart');
+        data = await JSON.parse(data);
+        if (data !== null) {
+          setContext(prevstate => prevstate.set('cart', data));
+        }
+      }
+      getSavedCart();
+    } catch (e) {
+      console.log(e.message);
+    }
+    return async () =>
+      await AsyncStorage.setItem('@cart', JSON.stringify(context.get('cart')));
+  }, []);
 
   const RenderScreen = () => {
     switch (index) {

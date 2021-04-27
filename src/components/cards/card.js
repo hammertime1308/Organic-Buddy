@@ -1,6 +1,8 @@
 import React from 'react';
 import { Image, Text } from 'react-native';
 
+import { NavigationService } from '../../utilities';
+
 import { StyledCard, Title, Description, Price } from './styles';
 
 export const Card = ({
@@ -9,10 +11,19 @@ export const Card = ({
   productDescription = 'Description',
   productPrice = 0,
   productImages = [],
-  onPress = () => {},
 }) => {
   return (
-    <StyledCard onPress={onPress} activeOpacity={0.75}>
+    <StyledCard
+      onPress={() =>
+        NavigationService.navigate('DetailedScreenFS', {
+          id,
+          productName,
+          productDescription,
+          productPrice,
+          productImages,
+        })
+      }
+      activeOpacity={0.75}>
       {productImages.length !== 0 ? (
         <Image
           style={{

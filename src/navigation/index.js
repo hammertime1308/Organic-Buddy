@@ -9,6 +9,7 @@ import {
   FlashScreen,
   UserAuth,
   LandingPage,
+  DetailedScreenFS,
 } from '../containers';
 
 const Screens = {
@@ -32,6 +33,9 @@ const Screens = {
   },
   UserAuth: {
     screen: UserAuth,
+  },
+  DetailedScreenFS: {
+    screen: DetailedScreenFS,
   },
 };
 
