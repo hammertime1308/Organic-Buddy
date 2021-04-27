@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { Header, Footer, Cart } from '../../components';
 import { FertilizersScreen } from './fertilizer/fertilizersScreen';
@@ -9,7 +10,7 @@ import { EquipmentScreen } from './equipments/equipmentsScren';
 
 import Context from '../../context';
 
-import { ButtonText, Container, SelectedButtonText } from './styles';
+import { ButtonText, Container, SelectedButtonText, Add } from './styles';
 
 export const Shop = () => {
   const [index, setIndex] = useState(1);
@@ -78,7 +79,13 @@ export const Shop = () => {
       <RenderScreen />
       <Footer selected="shop" />
       <View style={{ position: 'absolute', bottom: '12%', right: '5%' }}>
-        <Cart onPress={() => alert('Cart pressed')} />
+        {index === 3 ? (
+          <Add activeOpacity={0.8} onPress={() => alert('add pressed')}>
+            <Icon style={{ padding: 10 }} name="plus" size={30} color="white" />
+          </Add>
+        ) : (
+          <Cart onPress={() => alert('Cart pressed')} />
+        )}
       </View>
     </View>
   );

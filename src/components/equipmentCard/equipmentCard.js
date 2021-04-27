@@ -1,6 +1,8 @@
 import React from 'react';
 import { Image, View, Text } from 'react-native';
 
+import { NavigationService } from '../../utilities';
+
 import { Type, StyledCard, Title, Description, Price } from './styles';
 
 export const EquipmentCard = ({
@@ -11,10 +13,24 @@ export const EquipmentCard = ({
   equipmentImages = [],
   equipmentType = '',
   sellerId = '',
-  onPress = () => {},
+  sellerContact = '',
 }) => {
   return (
-    <StyledCard id={id} onPress={onPress} activeOpacity={0.75}>
+    <StyledCard
+      id={id}
+      onPress={() =>
+        NavigationService.navigate('DetailedScreenEquipment', {
+          id,
+          equipmentName,
+          equipmentDescription,
+          equipmentPrice,
+          equipmentImages,
+          equipmentType,
+          sellerId,
+          sellerContact,
+        })
+      }
+      activeOpacity={0.75}>
       <View style={{ display: 'flex', flexDirection: 'row' }}>
         <Type type={equipmentType} />
         <View style={{ flex: 1 }}>
@@ -38,7 +54,6 @@ export const EquipmentCard = ({
             style={{ flexDirection: 'row', justifyContent: 'space-evenly' }}>
             <Price>Price: {equipmentPrice} Rs</Price>
             <Price>Ad Type: {equipmentType}</Price>
-            <Price>Seller: {sellerId}</Price>
           </View>
         </View>
       </View>

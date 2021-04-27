@@ -6,6 +6,7 @@ import { FlashScreen } from './flashScreen/flashScreen';
 import { UserAuth } from './userAuth/userAuth';
 import { LandingPage } from './landingPage/LandingPage';
 import { DetailedScreenFS } from './detailedFertilizer&Seeds/detailedScreen';
+import { DetailedScreenEquipment } from './detailedEquipment/detailedEquipment';
 
 export {
   Shop,
@@ -16,4 +17,5 @@ export {
   UserAuth,
   LandingPage,
   DetailedScreenFS,
+  DetailedScreenEquipment,
 };

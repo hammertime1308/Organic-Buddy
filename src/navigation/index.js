@@ -10,6 +10,7 @@ import {
   UserAuth,
   LandingPage,
   DetailedScreenFS,
+  DetailedScreenEquipment,
 } from '../containers';
 
 const Screens = {
@@ -36,6 +37,9 @@ const Screens = {
   },
   DetailedScreenFS: {
     screen: DetailedScreenFS,
+  },
+  DetailedScreenEquipment: {
+    screen: DetailedScreenEquipment,
   },
 };
 
