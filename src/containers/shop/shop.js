@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import { Header, Footer, Cart } from '../../components';
+import { Header, Footer, CartIcon, CartModal } from '../../components';
 import { FertilizersScreen } from './fertilizer/fertilizersScreen';
 import { SeedScreen } from './seeds/seedsScreen';
 import { EquipmentScreen } from './equipments/equipmentsScren';
@@ -14,6 +14,7 @@ import { ButtonText, Container, SelectedButtonText, Add } from './styles';
 
 export const Shop = () => {
   const [index, setIndex] = useState(1);
+  const [modalVisible, setModalVisible] = useState(false);
 
   const [context, setContext] = useContext(Context);
 
@@ -47,6 +48,11 @@ export const Shop = () => {
 
   return (
     <View style={{ height: '100%' }}>
+      <CartModal
+        visible={modalVisible}
+        cart={context.get('cart')}
+        closeModal={() => setModalVisible(!modalVisible)}
+      />
       <Header>SHOP</Header>
       <View
         style={{
@@ -84,7 +90,11 @@ export const Shop = () => {
             <Icon style={{ padding: 10 }} name="plus" size={30} color="white" />
           </Add>
         ) : (
-          <Cart onPress={() => alert('Cart pressed')} />
+          <CartIcon
+            onPress={() => {
+              setModalVisible(true);
+            }}
+          />
         )}
       </View>
     </View>
