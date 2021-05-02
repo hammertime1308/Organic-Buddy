@@ -59,3 +59,33 @@ export const deleteEquipment = id =>
         data: get(error, 'response.data.Message', error.message),
       };
     });
+
+export const addNewEquipment = ({
+  equipmentName,
+  equipmentDescription,
+  equipmentPrice,
+  equipmentImages,
+  equipmentType,
+  sellerId,
+  sellerContact,
+}) =>
+  axios
+    .post(Endpoints.CREATE_NEW_EQUIPMENT, {
+      equipmentId: 0,
+      equipmentName: equipmentName,
+      equipmentDescription: equipmentDescription,
+      equipmentPrice: equipmentPrice,
+      equipmentImages: equipmentImages,
+      equipmentType: equipmentType,
+      sellerId: sellerId,
+      sellerContact: sellerContact,
+    })
+    .then(result => {
+      return { status: result.status, data: result.data };
+    })
+    .catch(error => {
+      return {
+        status: get(error, 'response.status', 'no status'),
+        data: get(error, 'response.data.Message', error.message),
+      };
+    });

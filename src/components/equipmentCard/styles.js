@@ -36,5 +36,5 @@ export const Price = styled.Text`
 
 export const Type = styled.View`
   width: 10px;
-  background-color: ${props => (props.type === 'hire' ? 'yellow' : 'red')};
+  background-color: ${props => (props.type === 'Hire' ? 'yellow' : 'red')};
 `;

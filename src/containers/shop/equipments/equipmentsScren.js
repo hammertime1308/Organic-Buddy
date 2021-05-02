@@ -7,7 +7,7 @@ export const EquipmentScreen = () => {
   return (
     <View style={{ flex: 1 }}>
       <ScrollView>
-        <EquipmentCard equipmentType="hire" />
+        <EquipmentCard equipmentType="Hire" />
         <EquipmentCard
           equipmentDescription="Sample description"
           equipmentImages={[

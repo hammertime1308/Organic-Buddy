@@ -3,7 +3,13 @@ import { View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import { Header, Footer, CartIcon, CartModal } from '../../components';
+import {
+  Header,
+  Footer,
+  CartIcon,
+  CartModal,
+  AddEquipmentModal,
+} from '../../components';
 import { FertilizersScreen } from './fertilizer/fertilizersScreen';
 import { SeedScreen } from './seeds/seedsScreen';
 import { EquipmentScreen } from './equipments/equipmentsScren';
@@ -14,7 +20,10 @@ import { ButtonText, Container, SelectedButtonText, Add } from './styles';
 
 export const Shop = () => {
   const [index, setIndex] = useState(1);
-  const [modalVisible, setModalVisible] = useState(false);
+  const [cartModalVisible, setCartModalVisible] = useState(false);
+  const [addEquipmentModalVisible, setAddEquipmentModalVisible] = useState(
+    false,
+  );
 
   const [context, setContext] = useContext(Context);
 
@@ -49,9 +58,14 @@ export const Shop = () => {
   return (
     <View style={{ height: '100%' }}>
       <CartModal
-        visible={modalVisible}
+        visible={cartModalVisible}
         cart={context.get('cart')}
-        closeModal={() => setModalVisible(!modalVisible)}
+        closeModal={() => setCartModalVisible(!cartModalVisible)}
+      />
+      <AddEquipmentModal
+        visible={addEquipmentModalVisible}
+        user={context.get('user')}
+        closeModal={() => setAddEquipmentModalVisible(!AddEquipmentModal)}
       />
       <Header>SHOP</Header>
       <View
@@ -86,13 +100,15 @@ export const Shop = () => {
       <Footer selected="shop" />
       <View style={{ position: 'absolute', bottom: '12%', right: '5%' }}>
         {index === 3 ? (
-          <Add activeOpacity={0.8} onPress={() => alert('add pressed')}>
+          <Add
+            activeOpacity={0.8}
+            onPress={() => setAddEquipmentModalVisible(true)}>
             <Icon style={{ padding: 10 }} name="plus" size={30} color="white" />
           </Add>
         ) : (
           <CartIcon
             onPress={() => {
-              setModalVisible(true);
+              setCartModalVisible(true);
             }}
           />
         )}
