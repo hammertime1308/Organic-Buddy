@@ -3,6 +3,7 @@ import { View } from 'react-native';
 
 import { Header, Footer } from '../../components';
 import { Forum } from './forum/forum';
+import { Chat } from './chatbot/chat';
 
 import { ButtonText, Container, SelectedButtonText } from './styles';
 
@@ -14,7 +15,7 @@ export const GetHelp = () => {
       case 1:
         return <Forum />;
       case 2:
-        return <Forum />;
+        return <Chat />;
     }
   };
 
@@ -36,9 +37,9 @@ export const GetHelp = () => {
         </Container>
         <Container onPress={() => setIndex(2)}>
           {index === 2 ? (
-            <SelectedButtonText>ChatBot(to implement)</SelectedButtonText>
+            <SelectedButtonText>ChatBot</SelectedButtonText>
           ) : (
-            <ButtonText>ChatBot(to implement)</ButtonText>
+            <ButtonText>ChatBot</ButtonText>
           )}
         </Container>
       </View>
