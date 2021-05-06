@@ -14,9 +14,10 @@ export const FertilizersScreen = () => {
             'http://i.imgur.com/XP2BE7q.jpg',
             'http://i.imgur.com/5nltiUd.jpg',
           ]}
+          productPrice="100"
         />
-        <Card productName="b" id="b" />
-        <Card productName="c" id="c" />
+        <Card productName="b" id="b" productPrice="10" />
+        <Card productName="c" id="c" productPrice="50" />
         <Card productName="d" id="d" />
         <Card productName="e" id="e" />
         <Card />
