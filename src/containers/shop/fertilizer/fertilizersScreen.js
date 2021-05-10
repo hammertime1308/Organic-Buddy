@@ -19,11 +19,11 @@ export const FertilizersScreen = () => {
         item.productImages = item.productImages.map(url => generateUrl(url));
       });
       setData(response.data);
+      setLoading(false);
     } else {
       alert(response.data);
       NavigationService.replace('Dashboard');
     }
-    setLoading(false);
   };
 
   useEffect(() => {
