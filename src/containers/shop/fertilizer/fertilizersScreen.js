@@ -42,11 +42,12 @@ export const FertilizersScreen = () => {
         <ScrollView>
           {data.map(item => (
             <Card
-              productId={item.productId}
+              id={item.productId}
               productName={item.productName}
               productDescription={item.productDescription}
               productPrice={item.productPrice}
               productImages={item.productImages}
+              key={item.id}
             />
           ))}
           <View style={{ height: 20 }} />
