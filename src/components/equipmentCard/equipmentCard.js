@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, View, Text } from 'react-native';
+import { Image, View } from 'react-native';
 
 import { NavigationService } from '../../utilities';
 
@@ -45,9 +45,7 @@ export const EquipmentCard = ({
                 uri: `${equipmentImages[0]}`,
               }}
             />
-          ) : (
-            <Text />
-          )}
+          ) : null}
           <Title>{equipmentName}</Title>
           <Description>{equipmentDescription}</Description>
           <View

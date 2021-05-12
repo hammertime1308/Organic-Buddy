@@ -35,9 +35,7 @@ export const Card = ({
             uri: `${productImages[0]}`,
           }}
         />
-      ) : (
-        <Text />
-      )}
+      ) : null}
       <Title>{productName}</Title>
       <Description>{productDescription}</Description>
       <Price>Price: {productPrice} Rs</Price>
