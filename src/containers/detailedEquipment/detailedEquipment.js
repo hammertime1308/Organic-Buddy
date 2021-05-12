@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   Text,
   TouchableOpacity,
   View,
   Linking,
   ScrollView,
+  ActivityIndicator,
 } from 'react-native';
 import Gallery from 'react-native-image-gallery';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -33,11 +34,14 @@ export const DetailedScreenEquipment = props => {
     id,
     sellerId,
     sellerContact,
+    setCount,
   } = props.navigation.state.params;
 
   const [context, setContext] = useContext(Context);
+  const [loading, setLoading] = useState(false);
 
   const handleDelete = async id => {
+    setLoading(true);
     let response = await deleteEquipment(id);
     if (response.status === 200) {
       alert('Deleted successfully');
@@ -45,6 +49,8 @@ export const DetailedScreenEquipment = props => {
     } else {
       alert(response.data);
     }
+    setCount(prevState => prevState + 1);
+    setLoading(false);
   };
 
   return (
@@ -136,7 +142,20 @@ export const DetailedScreenEquipment = props => {
           }}
           activeOpacity={0.8}
           onPress={() => handleDelete(id)}>
-          <Icon style={{ padding: 10 }} name="delete" size={30} color="white" />
+          {loading ? (
+            <ActivityIndicator
+              color="white"
+              size={30}
+              style={{ padding: 10 }}
+            />
+          ) : (
+            <Icon
+              style={{ padding: 10 }}
+              name="delete"
+              size={30}
+              color="white"
+            />
+          )}
         </TouchableOpacity>
       ) : null}
     </View>

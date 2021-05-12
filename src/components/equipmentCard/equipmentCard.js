@@ -14,6 +14,7 @@ export const EquipmentCard = ({
   equipmentType = '',
   sellerId = '',
   sellerContact = '',
+  setCount = () => {},
 }) => {
   return (
     <StyledCard
@@ -28,6 +29,7 @@ export const EquipmentCard = ({
           equipmentType,
           sellerId,
           sellerContact,
+          setCount,
         })
       }
       activeOpacity={0.75}>

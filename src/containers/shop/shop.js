@@ -12,7 +12,7 @@ import {
 } from '../../components';
 import { FertilizersScreen } from './fertilizer/fertilizersScreen';
 import { SeedScreen } from './seeds/seedsScreen';
-import { EquipmentScreen } from './equipments/equipmentsScren';
+import { EquipmentScreen } from './equipments/equipmentsScreen';
 
 import Context from '../../context';
 
