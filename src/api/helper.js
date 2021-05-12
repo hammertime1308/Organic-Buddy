@@ -36,7 +36,7 @@ export const signUp = (firstName, lastName, email, contact, password) =>
 
 export const getDashboardData = userId =>
   axios
-    .get(Endpoints.GET_DASHBOARD_DATA + `/${userId}`)
+    .get(Endpoints.GET_DASHBOARD_DATA + `${userId}`)
     .then(result => {
       return { status: result.status, data: result.data };
     })
@@ -49,7 +49,7 @@ export const getDashboardData = userId =>
 
 export const deleteEquipment = id =>
   axios
-    .delete(Endpoints.DELETE_EQUIPMENT + `/${id}`)
+    .delete(Endpoints.DELETE_EQUIPMENT + `${id}`)
     .then(result => {
       return { status: result.status, data: result.data };
     })
