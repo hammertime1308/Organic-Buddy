@@ -157,3 +157,20 @@ export const deletePost = id =>
         data: get(error, 'response.data.Message', error.message),
       };
     });
+
+export const commentOnPost = (id, comment, firstName, lastName) =>
+  axios
+    .post(Endpoints.ADD_COMMENT + `${id}`, {
+      comment: comment,
+      firstName: firstName,
+      lastName: lastName,
+    })
+    .then(result => {
+      return { status: result.status, data: result.data };
+    })
+    .catch(errosr => {
+      return {
+        status: get(error, 'response.status', 'no status'),
+        data: get(error, 'response.data.Message', error.message),
+      };
+    });

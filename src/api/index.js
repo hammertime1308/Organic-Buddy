@@ -11,6 +11,7 @@ import {
   generateUrl,
   getPosts,
   deletePost,
+  commentOnPost,
 } from './helper';
 
 export {
@@ -27,4 +28,5 @@ export {
   generateUrl,
   getPosts,
   deletePost,
+  commentOnPost,
 };

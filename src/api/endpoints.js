@@ -18,6 +18,7 @@ export const Endpoints = {
   CREATE_NEW_POST: '/forum',
   GET_ALL_POSTS: '/forum',
   DELETE_POST: '/forum/',
+  ADD_COMMENT: '/forum/',
   CREATE_CROP_LEARN_SECTION: '/learn',
   GET_CROPS_LEARN_SECTION: '/learn',
   DELETE_CROP_LEARN_SECTION: '/learn/',

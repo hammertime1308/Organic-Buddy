@@ -5,6 +5,8 @@ import {
   ScrollView,
   ActivityIndicator,
   TouchableOpacity,
+  Modal,
+  TextInput,
 } from 'react-native';
 import Gallery from 'react-native-image-gallery';
 import Moment from 'moment';
@@ -13,7 +15,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Header, Comment } from '../../components';
 
 import Context from '../../context';
-import { deletePost } from '../../api';
+import { deletePost, commentOnPost } from '../../api';
 
 import { NavigationService } from '../../utilities';
 
@@ -30,12 +32,15 @@ export const DetailedForum = props => {
   } = props.navigation.state.params;
 
   const [context, setContext] = useContext(Context);
-  const [loading, setLoading] = useState(false);
+  const [deleteLoading, setDeleteLoading] = useState(false);
+  const [commentLoading, setCommentLoading] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [data, setData] = useState('');
 
   Moment.locale('en');
 
   const handleDelete = async id => {
-    setLoading(true);
+    setDeleteLoading(true);
     let response = await deletePost(id);
     if (response.status === 200) {
       alert('Deleted successfully');
@@ -44,7 +49,40 @@ export const DetailedForum = props => {
       alert(response.data);
     }
     setCount(prevState => prevState + 1);
-    setLoading(false);
+    setDeleteLoading(false);
+  };
+
+  const clearData = () => {
+    setData('');
+  };
+
+  const closeModal = () => {
+    clearData();
+    setModalVisible(false);
+  };
+
+  const apiCall = async () => {
+    let user = context.get('user');
+    if (data === '') {
+      alert('Add comment message');
+      return;
+    }
+    setCommentLoading(true);
+    let response = await commentOnPost(
+      postId,
+      data,
+      user.firstName,
+      user.lastName,
+    );
+    setCommentLoading(false);
+    clearData();
+    closeModal();
+    if (response.status === 200) {
+      setCount(prevState => prevState + 1);
+    } else {
+      alert(response.data);
+    }
+    NavigationService.back();
   };
 
   return (
@@ -52,6 +90,101 @@ export const DetailedForum = props => {
       <Header />
       <Header>{title}</Header>
       <Header />
+
+      <Modal
+        visible={modalVisible}
+        transparent
+        onRequestClose={() => {
+          clearData();
+          closeModal();
+        }}
+        animationType="fade">
+        <View
+          style={{
+            flex: 1,
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <View
+            style={{
+              backgroundColor: 'white',
+              width: '90%',
+              height: 200,
+              position: 'absolute',
+              top: 200,
+              borderRadius: 5,
+              alignItems: 'center',
+            }}
+          />
+          <Text
+            style={{
+              fontSize: 20,
+              fontWeight: 'bold',
+              color: 'green',
+              position: 'absolute',
+              top: 220,
+            }}>
+            Comment
+          </Text>
+          {commentLoading ? (
+            <ActivityIndicator
+              style={{ position: 'absolute', top: 285 }}
+              size={50}
+              color="green"
+            />
+          ) : (
+            <View
+              style={{
+                position: 'absolute',
+                top: 270,
+                width: '90%',
+                height: 125,
+                alignItems: 'center',
+              }}>
+              <TextInput
+                placeholder="Add Comment"
+                value={data}
+                onChangeText={setData}
+                style={{
+                  borderColor: 'black',
+                  borderWidth: 0.5,
+                  width: '80%',
+                  paddingLeft: 15,
+                  paddingRight: 15,
+                }}
+              />
+              <View
+                style={{
+                  alignItems: 'flex-end',
+                  width: '80%',
+                  marginTop: 20,
+                }}>
+                <TouchableOpacity
+                  style={{
+                    paddingTop: 10,
+                    paddingRight: 15,
+                    paddingBottom: 10,
+                    paddingLeft: 15,
+                    backgroundColor: 'green',
+                  }}
+                  activeOpacity={0.8}
+                  onPress={() => apiCall()}>
+                  <Text
+                    style={{
+                      color: 'white',
+                      fontSize: 15,
+                      fontWeight: 'bold',
+                    }}>
+                    Post
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          )}
+        </View>
+      </Modal>
+
       {image.length !== 0 ? (
         <View style={{ width: '100%', height: '30%' }}>
           <Gallery
@@ -144,7 +277,7 @@ export const DetailedForum = props => {
           }}
           activeOpacity={0.8}
           onPress={() => handleDelete(postId)}>
-          {loading ? (
+          {deleteLoading ? (
             <ActivityIndicator
               color="white"
               size={30}
@@ -160,6 +293,26 @@ export const DetailedForum = props => {
           )}
         </TouchableOpacity>
       ) : null}
+
+      <TouchableOpacity
+        style={{
+          position: 'absolute',
+          bottom: 70,
+          right: 0,
+          backgroundColor: 'green',
+          margin: 15,
+          borderRadius: 50,
+          elevation: 5,
+        }}
+        activeOpacity={0.8}
+        onPress={() => setModalVisible(true)}>
+        <Icon
+          style={{ padding: 15 }}
+          name="comment-plus"
+          size={25}
+          color="white"
+        />
+      </TouchableOpacity>
     </View>
   );
 };
