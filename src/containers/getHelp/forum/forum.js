@@ -1,27 +1,65 @@
-import React from 'react';
-import { View, ScrollView } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, ScrollView, ActivityIndicator } from 'react-native';
+import Moment from 'moment';
 
 import { Post } from '../../../components';
 
+import { getPosts, generateUrl } from '../../../api';
+import { NavigationService } from '../../../utilities';
+
 export const Forum = () => {
+  const [count, setCount] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    const getData = async () => {
+      setLoading(true);
+      let response = await getPosts();
+      if (response.status === 200) {
+        // modify url of image in response
+        response.data.map(item => {
+          if ('image' in item) {
+            item.image = item.image.map(url => generateUrl(url));
+          } else {
+            item.image = [];
+          }
+        });
+        setData(response.data);
+        setLoading(false);
+      } else {
+        alert(response.data);
+        NavigationService.replace('Dashboard');
+      }
+    };
+    getData();
+  }, [count]);
+
   return (
     <View style={{ flex: 1 }}>
-      <ScrollView>
-        <Post
-          image={[
-            'https://upload.wikimedia.org/wikipedia/commons/5/59/Collmer_leaf_speck3.jpg',
-          ]}
-          title="Sample title"
-          description="sample desc"
-          timestamp="2021-04-04 13:01:47.167209"
+      {loading ? (
+        <ActivityIndicator
+          style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}
+          size={50}
+          color="green"
         />
-        <Post
-          title="Sample title"
-          description="sample desc"
-          timestamp="2021-04-04 13:01:47.167209"
-        />
-        <View style={{ height: 20 }} />
-      </ScrollView>
+      ) : (
+        <ScrollView>
+          {data.map(item => (
+            <Post
+              postId={item.postId}
+              userId={item.userId}
+              title={item.title}
+              description={item.description}
+              image={item.image}
+              timestamp={Moment.utc(item.timestamp).local()}
+              comments={item.comments}
+              setCount={setCount}
+            />
+          ))}
+          <View style={{ height: 20 }} />
+        </ScrollView>
+      )}
     </View>
   );
 };
