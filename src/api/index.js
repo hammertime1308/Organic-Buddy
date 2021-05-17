@@ -9,6 +9,8 @@ import {
   getSeeds,
   getEquipments,
   generateUrl,
+  getPosts,
+  deletePost,
 } from './helper';
 
 export {
@@ -23,4 +25,6 @@ export {
   getSeeds,
   getEquipments,
   generateUrl,
+  getPosts,
+  deletePost,
 };

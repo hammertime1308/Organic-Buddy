@@ -131,3 +131,29 @@ export const getEquipments = () =>
 
 export const generateUrl = url =>
   `https://firebasestorage.googleapis.com/v0/b/be-database.appspot.com/o/${url}.jpg?alt=media&token=f5d33b2d-bba5-4a27-ab1a-ebb31d15bd86`;
+
+export const getPosts = () =>
+  axios
+    .get(Endpoints.GET_ALL_POSTS)
+    .then(result => {
+      return { status: result.status, data: result.data };
+    })
+    .catch(error => {
+      return {
+        status: get(error, 'response.status', 'no status'),
+        data: get(error, 'response.data.Message', error.message),
+      };
+    });
+
+export const deletePost = id =>
+  axios
+    .delete(Endpoints.DELETE_POST + `${id}`)
+    .then(result => {
+      return { status: result.status, data: result.data };
+    })
+    .catch(error => {
+      return {
+        status: get(error, 'response.status', 'no status'),
+        data: get(error, 'response.data.Message', error.message),
+      };
+    });
