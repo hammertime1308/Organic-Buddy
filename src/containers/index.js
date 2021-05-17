@@ -7,6 +7,7 @@ import { UserAuth } from './userAuth/userAuth';
 import { LandingPage } from './landingPage/LandingPage';
 import { DetailedScreenFS } from './detailedFertilizer&Seeds/detailedScreen';
 import { DetailedScreenEquipment } from './detailedEquipment/detailedEquipment';
+import { DetailedForum } from './detailedForum/detailedForum';
 
 export {
   Shop,
@@ -18,4 +19,5 @@ export {
   LandingPage,
   DetailedScreenFS,
   DetailedScreenEquipment,
+  DetailedForum,
 };

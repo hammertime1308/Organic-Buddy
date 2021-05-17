@@ -11,6 +11,7 @@ import {
   LandingPage,
   DetailedScreenFS,
   DetailedScreenEquipment,
+  DetailedForum,
 } from '../containers';
 
 const Screens = {
@@ -40,6 +41,9 @@ const Screens = {
   },
   DetailedScreenEquipment: {
     screen: DetailedScreenEquipment,
+  },
+  DetailedForum: {
+    screen: DetailedForum,
   },
 };
 

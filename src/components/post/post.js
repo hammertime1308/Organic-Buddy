@@ -2,6 +2,8 @@ import React from 'react';
 import { Text, Image } from 'react-native';
 import Moment from 'moment';
 
+import { NavigationService } from '../../utilities';
+
 import {
   StyledPost,
   RowContainer,
@@ -20,11 +22,25 @@ export const Post = ({
   image = [],
   timestamp = '',
   comments = ['comment'],
+  setCount,
 }) => {
   Moment.locale('en');
   let date = Moment(timestamp).format('MMM Do YY');
   return (
-    <StyledPost activeOpacity={0.9} onPress={() => alert('Post pressed')}>
+    <StyledPost
+      activeOpacity={0.9}
+      onPress={() =>
+        NavigationService.navigate('DetailedForum', {
+          postId: postId,
+          userId: userId,
+          title: title,
+          description: description,
+          image: image,
+          timestamp: timestamp,
+          comments: comments,
+          setCount: setCount,
+        })
+      }>
       <RowContainer>
         {image.length !== 0 ? (
           <Image
