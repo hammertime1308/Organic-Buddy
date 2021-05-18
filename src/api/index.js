@@ -5,6 +5,7 @@ import {
   getDashboardData,
   deleteEquipment,
   addNewEquipment,
+  fetchCropsLearn,
 } from './helper';
 
 export {
@@ -15,4 +16,5 @@ export {
   getDashboardData,
   deleteEquipment,
   addNewEquipment,
+  fetchCropsLearn,
 };

@@ -89,3 +89,16 @@ export const addNewEquipment = ({
         data: get(error, 'response.data.Message', error.message),
       };
     });
+
+export const fetchCropsLearn = () =>
+  axios
+    .get(Endpoints.GET_CROPS_LEARN_SECTION)
+    .then(result => {
+      return { status: result.status, data: result.data };
+    })
+    .catch(error => {
+      return {
+        status: get(error, 'response.status', 'no status'),
+        data: get(error, 'response.data.Message', error.message),
+      };
+    });
