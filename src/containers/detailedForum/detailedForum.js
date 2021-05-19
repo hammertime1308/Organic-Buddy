@@ -255,7 +255,7 @@ export const DetailedForum = props => {
             No Comments posted yet !
           </Text>
         ) : (
-          comments.map(item => {
+          comments.map((item, index) => {
             if (typeof item === 'object') {
               return (
                 <Comment
@@ -263,6 +263,7 @@ export const DetailedForum = props => {
                   firstName={item.firstName}
                   lastName={item.lastName}
                   timestamp={Moment(item.timestamp).format('DD-MM-YYYY HH:mm')}
+                  key={index}
                 />
               );
             }

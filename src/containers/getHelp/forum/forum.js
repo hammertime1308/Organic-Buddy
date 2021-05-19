@@ -64,6 +64,7 @@ export const Forum = () => {
               timestamp={Moment.utc(item.timestamp).local()}
               comments={item.comments}
               setCount={setCount}
+              key={item.postId}
             />
           ))}
           <View style={{ height: 20 }} />

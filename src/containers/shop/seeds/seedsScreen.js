@@ -47,7 +47,7 @@ export const SeedScreen = () => {
               productDescription={item.productDescription}
               productPrice={item.productPrice}
               productImages={item.productImages}
-              key={item.id}
+              key={item.productId}
             />
           ))}
           <View style={{ height: 20 }} />

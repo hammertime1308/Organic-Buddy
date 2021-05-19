@@ -58,7 +58,7 @@ export const EquipmentScreen = () => {
               equipmentType={item.equipmentType}
               sellerId={item.sellerId}
               sellerContact={item.sellerContact}
-              key={item.id}
+              key={item.equipmentId}
               setCount={setCount}
             />
           ))}
