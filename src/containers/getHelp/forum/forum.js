@@ -1,9 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { View, ScrollView, ActivityIndicator } from 'react-native';
+import React, { useState, useEffect, useContext } from 'react';
+import {
+  View,
+  ScrollView,
+  ActivityIndicator,
+  TouchableOpacity,
+} from 'react-native';
 import Moment from 'moment';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import { Post } from '../../../components';
+import { Post, AddNewPost } from '../../../components';
 
+import Context from '../../../context';
 import { getPosts, generateUrl } from '../../../api';
 import { NavigationService } from '../../../utilities';
 
@@ -11,6 +18,8 @@ export const Forum = () => {
   const [count, setCount] = useState(0);
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState();
+  const [addModalVisibility, setAddModalVisibility] = useState(false);
+  const [context, setContext] = useContext(Context);
 
   useEffect(() => {
     const getData = async () => {
@@ -60,6 +69,30 @@ export const Forum = () => {
           <View style={{ height: 20 }} />
         </ScrollView>
       )}
+      <AddNewPost
+        visible={addModalVisibility}
+        user={context.get('user')}
+        closeModal={() => {
+          setAddModalVisibility(!addModalVisibility);
+          setCount(prevState => prevState + 1);
+        }}
+      />
+      <TouchableOpacity
+        style={{
+          position: 'absolute',
+          bottom: 10,
+          right: 10,
+          width: 60,
+          height: 60,
+          borderRadius: 50,
+          backgroundColor: 'green',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+        activeOpacity={0.8}
+        onPress={() => setAddModalVisibility(!addModalVisibility)}>
+        <Icon name="feather" size={35} color="white" />
+      </TouchableOpacity>
     </View>
   );
 };

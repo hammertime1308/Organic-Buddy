@@ -6,6 +6,7 @@ import { Post } from './post/post';
 import { EquipmentCard } from './equipmentCard/equipmentCard';
 import { AddEquipmentModal } from './addEquipment/addEquipment';
 import { Comment } from './comment/Comment';
+import { AddNewPost } from './addNewPost/addNewPost';
 
 export {
   Card,
@@ -17,4 +18,5 @@ export {
   CartModal,
   AddEquipmentModal,
   Comment,
+  AddNewPost,
 };

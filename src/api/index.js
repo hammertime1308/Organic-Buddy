@@ -12,6 +12,7 @@ import {
   getPosts,
   deletePost,
   commentOnPost,
+  newPost,
 } from './helper';
 
 export {
@@ -29,4 +30,5 @@ export {
   getPosts,
   deletePost,
   commentOnPost,
+  newPost,
 };

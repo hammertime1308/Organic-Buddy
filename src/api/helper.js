@@ -174,3 +174,24 @@ export const commentOnPost = (id, comment, firstName, lastName) =>
         data: get(error, 'response.data.Message', error.message),
       };
     });
+
+export const newPost = (userId, title, description, image) =>
+  axios
+    .post(Endpoints.CREATE_NEW_POST, {
+      postId: '0',
+      userId: userId,
+      title: title,
+      description: description,
+      image: image,
+      timestamp: 'string',
+      comments: ['string'],
+    })
+    .then(result => {
+      return { status: result.status, data: result.data };
+    })
+    .catch(error => {
+      return {
+        status: get(error, 'response.status', 'no status'),
+        data: get(error, 'response.data.Message', error.message),
+      };
+    });
