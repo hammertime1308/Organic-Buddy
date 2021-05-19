@@ -159,6 +159,24 @@ export const Learn = () => {
                   paddingRight: 10,
                   paddingTop: 10,
                 }}>
+                Diseases
+              </Text>
+              <Text
+                style={{
+                  fontSize: 20,
+                  paddingLeft: 20,
+                  paddingRight: 20,
+                  paddingBottom: 30,
+                }}>
+                {selectedData.diseases.map(item => item.name).join(' , ')}
+              </Text>
+              <Text
+                style={{
+                  fontSize: 25,
+                  paddingLeft: 10,
+                  paddingRight: 10,
+                  paddingTop: 10,
+                }}>
                 Region Grown
               </Text>
               <Text
