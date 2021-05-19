@@ -13,6 +13,7 @@ import {
   deletePost,
   commentOnPost,
   newPost,
+  fetchCropsLearn,
 } from './helper';
 
 export {
@@ -31,4 +32,5 @@ export {
   deletePost,
   commentOnPost,
   newPost,
+  fetchCropsLearn,
 };

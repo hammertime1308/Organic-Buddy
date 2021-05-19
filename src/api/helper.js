@@ -176,16 +176,19 @@ export const commentOnPost = (id, comment, firstName, lastName) =>
     });
 
 export const newPost = (userId, title, description, image) =>
+  axios.post(Endpoints.CREATE_NEW_POST, {
+    postId: '0',
+    userId: userId,
+    title: title,
+    description: description,
+    image: image,
+    timestamp: 'string',
+    comments: ['string'],
+  });
+
+export const fetchCropsLearn = () =>
   axios
-    .post(Endpoints.CREATE_NEW_POST, {
-      postId: '0',
-      userId: userId,
-      title: title,
-      description: description,
-      image: image,
-      timestamp: 'string',
-      comments: ['string'],
-    })
+    .get(Endpoints.GET_CROPS_LEARN_SECTION)
     .then(result => {
       return { status: result.status, data: result.data };
     })
