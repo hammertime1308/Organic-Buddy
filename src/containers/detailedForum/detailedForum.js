@@ -45,6 +45,9 @@ export const DetailedForum = props => {
     if (response.status === 200) {
       alert('Deleted successfully');
       NavigationService.back();
+    } else if (response.status === 404) {
+      alert('The post is already deleted');
+      NavigationService.back();
     } else {
       alert(response.data);
     }
@@ -78,6 +81,9 @@ export const DetailedForum = props => {
     clearData();
     closeModal();
     if (response.status === 200) {
+      setCount(prevState => prevState + 1);
+    } else if (response.status === 404) {
+      alert('The post is deleted by the owner.');
       setCount(prevState => prevState + 1);
     } else {
       alert(response.data);
