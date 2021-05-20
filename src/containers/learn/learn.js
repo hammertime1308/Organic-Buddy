@@ -1,6 +1,6 @@
-import ModalDropdown from 'react-native-modal-dropdown';
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, Text, View, ScrollView } from 'react-native';
+import ModalDropdown from 'react-native-modal-dropdown';
 
 import { fetchCropsLearn } from '../../api';
 
@@ -16,12 +16,9 @@ export const Learn = () => {
   const getData = async () => {
     setLoading(true);
     let response = await fetchCropsLearn();
-    console.log(response.data);
     if (response.status === 200) {
       setAllData(response.data);
       setSelectedData(response.data[0]);
-      console.log('alldata', allData);
-      console.log('selecteddata', selectedData);
     } else {
       alert(response.data);
       NavigationService.replace('Dashboard');
@@ -65,7 +62,7 @@ export const Learn = () => {
                 alignSelf: 'center',
                 padding: 10,
               }}
-              dropdownTextStyle={{ fontSize: 18 }}
+              dropdownTextStyle={{ fontSize: 18, width: 1000, paddingLeft: 20 }}
               dropdownStyle={{
                 justifyContent: 'center',
                 width: '100%',
@@ -79,10 +76,11 @@ export const Learn = () => {
               options={allData.map(item => item.cropName)}
             />
 
-            <ScrollView>
+            <ScrollView style={{ margin: 20 }}>
               <Text
                 style={{
-                  fontSize: 25,
+                  fontSize: 20,
+                  fontWeight: 'bold',
                   paddingLeft: 10,
                   paddingRight: 10,
                   paddingTop: 10,
@@ -91,7 +89,7 @@ export const Learn = () => {
               </Text>
               <Text
                 style={{
-                  fontSize: 20,
+                  fontSize: 15,
                   paddingLeft: 20,
                   paddingRight: 20,
                   paddingBottom: 30,
@@ -100,7 +98,8 @@ export const Learn = () => {
               </Text>
               <Text
                 style={{
-                  fontSize: 25,
+                  fontSize: 20,
+                  fontWeight: 'bold',
                   paddingLeft: 10,
                   paddingRight: 10,
                   paddingTop: 10,
@@ -109,7 +108,7 @@ export const Learn = () => {
               </Text>
               <Text
                 style={{
-                  fontSize: 20,
+                  fontSize: 15,
                   paddingLeft: 20,
                   paddingRight: 20,
                   paddingBottom: 30,
@@ -118,7 +117,8 @@ export const Learn = () => {
               </Text>
               <Text
                 style={{
-                  fontSize: 25,
+                  fontSize: 20,
+                  fontWeight: 'bold',
                   paddingLeft: 10,
                   paddingRight: 10,
                   paddingTop: 10,
@@ -127,7 +127,7 @@ export const Learn = () => {
               </Text>
               <Text
                 style={{
-                  fontSize: 20,
+                  fontSize: 15,
                   paddingLeft: 20,
                   paddingRight: 20,
                   paddingBottom: 30,
@@ -136,7 +136,8 @@ export const Learn = () => {
               </Text>
               <Text
                 style={{
-                  fontSize: 25,
+                  fontSize: 20,
+                  fontWeight: 'bold',
                   paddingLeft: 10,
                   paddingRight: 10,
                   paddingTop: 10,
@@ -145,7 +146,7 @@ export const Learn = () => {
               </Text>
               <Text
                 style={{
-                  fontSize: 20,
+                  fontSize: 15,
                   paddingLeft: 20,
                   paddingRight: 20,
                   paddingBottom: 30,
@@ -154,7 +155,8 @@ export const Learn = () => {
               </Text>
               <Text
                 style={{
-                  fontSize: 25,
+                  fontSize: 20,
+                  fontWeight: 'bold',
                   paddingLeft: 10,
                   paddingRight: 10,
                   paddingTop: 10,
@@ -163,7 +165,7 @@ export const Learn = () => {
               </Text>
               <Text
                 style={{
-                  fontSize: 20,
+                  fontSize: 15,
                   paddingLeft: 20,
                   paddingRight: 20,
                   paddingBottom: 30,
@@ -172,7 +174,8 @@ export const Learn = () => {
               </Text>
               <Text
                 style={{
-                  fontSize: 25,
+                  fontSize: 20,
+                  fontWeight: 'bold',
                   paddingLeft: 10,
                   paddingRight: 10,
                   paddingTop: 10,
@@ -181,7 +184,7 @@ export const Learn = () => {
               </Text>
               <Text
                 style={{
-                  fontSize: 20,
+                  fontSize: 15,
                   paddingLeft: 20,
                   paddingRight: 20,
                   paddingBottom: 30,
@@ -192,7 +195,7 @@ export const Learn = () => {
           </View>
         )}
       </View>
-      <Footer />
+      <Footer selected="learn" />
     </View>
   );
 };
