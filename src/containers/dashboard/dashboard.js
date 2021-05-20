@@ -73,6 +73,11 @@ export const Dashboard = () => {
               }}>
               <LogoutText>Logout</LogoutText>
             </LogoutButton>
+            <LogoutButton
+              activeOpacity={0.9}
+              onPress={() => NavigationService.navigate('Orders')}>
+              <LogoutText>Orders</LogoutText>
+            </LogoutButton>
           </View>
           <DetailCardContainer>
             <NameText>

@@ -8,6 +8,7 @@ import { LandingPage } from './landingPage/LandingPage';
 import { DetailedScreenFS } from './detailedFertilizer&Seeds/detailedScreen';
 import { DetailedScreenEquipment } from './detailedEquipment/detailedEquipment';
 import { DetailedForum } from './detailedForum/detailedForum';
+import { Orders } from './orders/orders';
 
 export {
   Shop,
@@ -20,4 +21,5 @@ export {
   DetailedScreenFS,
   DetailedScreenEquipment,
   DetailedForum,
+  Orders,
 };

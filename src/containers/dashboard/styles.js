@@ -52,7 +52,7 @@ export const DetailCardContainer = styled.View`
 export const AvatarDetailContainer = styled.View`
   flex-direction: row;
   position: absolute;
-  top: 15%;
+  top: 12%;
   left: 5%;
   right: 5%;
 `;

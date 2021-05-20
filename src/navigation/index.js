@@ -12,6 +12,7 @@ import {
   DetailedScreenFS,
   DetailedScreenEquipment,
   DetailedForum,
+  Orders,
 } from '../containers';
 
 const Screens = {
@@ -44,6 +45,9 @@ const Screens = {
   },
   DetailedForum: {
     screen: DetailedForum,
+  },
+  Orders: {
+    screen: Orders,
   },
 };
 
