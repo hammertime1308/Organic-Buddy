@@ -58,7 +58,7 @@ export const Dashboard = () => {
   return (
     <View style={{ flex: 1, backgroundColor: '#F0F0F0' }}>
       <View style={{ flex: 1 }}>
-        <Header>Dashboard</Header>
+        <Header>DASHBOARD</Header>
         <GreenCurvature />
         <AvatarDetailContainer>
           <View>
