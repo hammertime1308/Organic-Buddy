@@ -14,6 +14,7 @@ export const OrderCardContainer = styled.View`
   padding: 10px 20px;
   border-radius: 5px;
   elevation: 2;
+  margin-bottom: 10px;
 `;
 
 export const HorizontalContainer = styled.View`
@@ -25,5 +26,5 @@ export const HorizontalContainer = styled.View`
 export const StatusText = styled.Text`
   font-size: 20px;
   font-weight: bold;
-  color: ${props => (props.status === 'delivered' ? 'green' : 'yellow')};
+  color: ${props => (props.status === 'delivered' ? 'green' : 'orange')};
 `;
