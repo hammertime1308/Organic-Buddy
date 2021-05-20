@@ -33,6 +33,7 @@ export const Learn = () => {
     <View style={{ flex: 1, height: '100%' }}>
       <View style={{ flex: 1 }}>
         <Header> LEARN </Header>
+        <Header />
         {loading ? (
           <ActivityIndicator
             color="green"
@@ -50,7 +51,6 @@ export const Learn = () => {
             <ModalDropdown
               style={{
                 height: 50,
-
                 width: '100%',
                 backgroundColor: 'rgba(76, 154, 42, 1)',
               }}
@@ -61,6 +61,7 @@ export const Learn = () => {
                 justifyContent: 'center',
                 alignSelf: 'center',
                 padding: 10,
+                paddingLeft: 20,
               }}
               dropdownTextStyle={{ fontSize: 18, width: 1000, paddingLeft: 20 }}
               dropdownStyle={{
