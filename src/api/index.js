@@ -14,6 +14,7 @@ import {
   commentOnPost,
   newPost,
   fetchCropsLearn,
+  getOrders,
 } from './helper';
 
 export {
@@ -33,4 +34,5 @@ export {
   commentOnPost,
   newPost,
   fetchCropsLearn,
+  getOrders,
 };

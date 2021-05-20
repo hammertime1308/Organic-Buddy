@@ -198,3 +198,16 @@ export const fetchCropsLearn = () =>
         data: get(error, 'response.data.Message', error.message),
       };
     });
+
+export const getOrders = id =>
+  axios
+    .get(Endpoints.GET_ORDERS + `${id}`)
+    .then(result => {
+      return { status: result.status, data: result.data };
+    })
+    .catch(error => {
+      return {
+        status: get(error, 'response.status', 'no status'),
+        data: get(error, 'response.data.Message', error.message),
+      };
+    });

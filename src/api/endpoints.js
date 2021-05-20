@@ -22,6 +22,8 @@ export const Endpoints = {
   CREATE_CROP_LEARN_SECTION: '/learn',
   GET_CROPS_LEARN_SECTION: '/learn',
   DELETE_CROP_LEARN_SECTION: '/learn/',
+  GET_ORDERS: '/orders/',
+  CREATE_ORDER: '/orders',
 };
 
 export default axios.create({
