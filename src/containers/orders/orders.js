@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { ActivityIndicator, Text, View } from 'react-native';
+import Moment from 'moment';
 
 import { Header } from '../../components';
 
@@ -104,7 +105,9 @@ export const Orders = () => {
                 <OrderCard
                   transactionId={item.transactionId}
                   status={item.status}
-                  timestamp={item.timestamp}
+                  timestamp={Moment.utc(item.timestamp)
+                    .local()
+                    .format('YYYY-MM-DD hh:mm:ss')}
                   amount={item.amount}
                   items={item.items}
                   key={item.transactionId}
