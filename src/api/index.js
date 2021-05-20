@@ -15,6 +15,7 @@ import {
   newPost,
   fetchCropsLearn,
   getOrders,
+  placeOrder,
 } from './helper';
 
 export {
@@ -35,4 +36,5 @@ export {
   newPost,
   fetchCropsLearn,
   getOrders,
+  placeOrder,
 };

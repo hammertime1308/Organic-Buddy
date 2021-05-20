@@ -27,6 +27,15 @@ export const Shop = () => {
 
   const [context, setContext] = useContext(Context);
 
+  const clearCart = async () => {
+    try {
+      setContext(prevstate => prevstate.set('cart', []));
+      await AsyncStorage.removeItem('@cart');
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+
   useEffect(() => {
     try {
       async function getSavedCart() {
@@ -61,6 +70,8 @@ export const Shop = () => {
         visible={cartModalVisible}
         cart={context.get('cart')}
         closeModal={() => setCartModalVisible(!cartModalVisible)}
+        userId={context.get('user').userId}
+        clearCart={clearCart}
       />
       <AddEquipmentModal
         visible={addEquipmentModalVisible}
