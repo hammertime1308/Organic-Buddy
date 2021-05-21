@@ -24,8 +24,7 @@ export const Post = ({
   comments = ['comment'],
   setCount,
 }) => {
-  Moment.locale('en');
-  let date = Moment(timestamp).format('MMM Do YY');
+  let date = Moment.utc(timestamp).local().format('YYYY-MM-DD hh:mm:ss');
   return (
     <StyledPost
       activeOpacity={0.9}

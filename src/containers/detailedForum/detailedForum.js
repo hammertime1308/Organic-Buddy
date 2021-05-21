@@ -37,8 +37,6 @@ export const DetailedForum = props => {
   const [modalVisible, setModalVisible] = useState(false);
   const [data, setData] = useState('');
 
-  Moment.locale('en');
-
   const handleDelete = async id => {
     setDeleteLoading(true);
     let response = await deletePost(id);
@@ -228,7 +226,7 @@ export const DetailedForum = props => {
                 fontWeight: '700',
                 color: 'gray',
               }}>
-              {Moment(timestamp).format('DD-MM-YYYY')}
+              {Moment.utc(timestamp).local().format('YYYY-MM-DD hh:mm:ss')}
             </Text>
           </View>
         </View>
@@ -262,7 +260,9 @@ export const DetailedForum = props => {
                   comment={item.comment}
                   firstName={item.firstName}
                   lastName={item.lastName}
-                  timestamp={Moment(item.timestamp).format('DD-MM-YYYY HH:mm')}
+                  timestamp={Moment.utc(item.timestamp)
+                    .local()
+                    .format('YYYY-MM-DD hh:mm:ss')}
                   key={index}
                 />
               );

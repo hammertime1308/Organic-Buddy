@@ -40,9 +40,9 @@ export const Dashboard = () => {
   const getData = async () => {
     let response = await getDashboardData(user.userId);
     if (response.status === 200) {
-      response.data.timestamp = Moment(response.data.timestamp).format(
-        'DD/MM/YYYY',
-      );
+      response.data.timestamp = Moment.utc(response.data.timestamp)
+        .local()
+        .format('YYYY-MM-DD hh:mm:ss');
       setData(response.data);
       setLoading(false);
     } else {

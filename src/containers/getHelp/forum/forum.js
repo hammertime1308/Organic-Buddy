@@ -61,7 +61,9 @@ export const Forum = () => {
               title={item.title}
               description={item.description}
               image={item.image}
-              timestamp={Moment.utc(item.timestamp).local()}
+              timestamp={Moment.utc(item.timestamp)
+                .local()
+                .format('YYYY-MM-DD hh:mm:ss')}
               comments={item.comments}
               setCount={setCount}
               key={item.postId}
