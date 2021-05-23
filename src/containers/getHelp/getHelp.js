@@ -4,6 +4,7 @@ import { View } from 'react-native';
 import { Header, Footer } from '../../components';
 import { Forum } from './forum/forum';
 import { Chat } from './chatbot/chat';
+import { DiseasePrediction } from './diseasePrediction/diseasePrediction';
 
 import { ButtonText, Container, SelectedButtonText } from './styles';
 
@@ -16,6 +17,8 @@ export const GetHelp = () => {
         return <Forum />;
       case 2:
         return <Chat />;
+      case 3:
+        return <DiseasePrediction />;
     }
   };
 
@@ -40,6 +43,13 @@ export const GetHelp = () => {
             <SelectedButtonText>ChatBot</SelectedButtonText>
           ) : (
             <ButtonText>ChatBot</ButtonText>
+          )}
+        </Container>
+        <Container onPress={() => setIndex(3)}>
+          {index === 3 ? (
+            <SelectedButtonText>Disease predictor</SelectedButtonText>
+          ) : (
+            <ButtonText>Disease predictor</ButtonText>
           )}
         </Container>
       </View>
