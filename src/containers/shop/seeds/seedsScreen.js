@@ -16,7 +16,11 @@ export const SeedScreen = () => {
     if (response.status === 200) {
       // modify url of image in response
       response.data.map(item => {
-        item.productImages = item.productImages.map(url => generateUrl(url));
+        if ('productImages' in item) {
+          item.productImages = item.productImages.map(url => generateUrl(url));
+        } else {
+          item.productImages = [];
+        }
       });
       setData(response.data);
       setLoading(false);
