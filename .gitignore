@@ -59,3 +59,4 @@ buck-out/
 /ios/Pods/
 package-lock.json
 src/containers/getHelp/chatbot/env.js
+coverage/
