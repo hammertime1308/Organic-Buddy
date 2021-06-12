@@ -7,6 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
+    "coverage": "jest --coverage",
     "lint": "eslint .",
     "precommit": "lint-staged"
   },
@@ -54,9 +55,12 @@
     "lint-staged": "^10.5.4",
     "metro-react-native-babel-preset": "0.64.0",
     "prettier": "^2.2.1",
-    "react-test-renderer": "17.0.1"
+    "react-test-renderer": "^17.0.1"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "transformIgnorePatterns": [
+      "/node_modules/(?!react-native)/.+"
+    ]
   }
 }
