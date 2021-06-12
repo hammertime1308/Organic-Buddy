@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Should render card with image 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#ffff",
+      "borderColor": "rgba(0, 0, 0, 0.01)",
+      "borderRadius": 5,
+      "borderStyle": "solid",
+      "borderWidth": 1,
+      "display": "flex",
+      "elevation": 3,
+      "flexDirection": "column",
+      "marginBottom": 0,
+      "marginLeft": 10,
+      "marginRight": 10,
+      "marginTop": 10,
+      "opacity": 1,
+      "overflow": "hidden",
+      "shadowColor": "#000",
+      "shadowOpacity": 0.26,
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://cdn.pixabay.com/photo/2017/07/19/09/51/hallstatt-2518544_960_720.jpg",
+      }
+    }
+    style={
+      Object {
+        "height": 120,
+        "resizeMode": "cover",
+        "width": "100%",
+      }
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 20,
+          "fontWeight": "700",
+          "marginBottom": 5,
+          "marginLeft": 15,
+          "marginRight": 15,
+          "marginTop": 10,
+        },
+      ]
+    }
+  >
+    Sample name for test
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 15,
+          "marginBottom": 10,
+          "marginLeft": 15,
+          "marginRight": 15,
+          "marginTop": 0,
+        },
+      ]
+    }
+  >
+    sample description of the card
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 15,
+          "fontWeight": "600",
+          "marginBottom": 10,
+          "marginLeft": 15,
+          "marginRight": 15,
+          "marginTop": 0,
+        },
+      ]
+    }
+  >
+    Price: 
+    10200
+     Rs
+  </Text>
+</View>
+`;
+
+exports[`Card Should render card without image 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#ffff",
+      "borderColor": "rgba(0, 0, 0, 0.01)",
+      "borderRadius": 5,
+      "borderStyle": "solid",
+      "borderWidth": 1,
+      "display": "flex",
+      "elevation": 3,
+      "flexDirection": "column",
+      "marginBottom": 0,
+      "marginLeft": 10,
+      "marginRight": 10,
+      "marginTop": 10,
+      "opacity": 1,
+      "overflow": "hidden",
+      "shadowColor": "#000",
+      "shadowOpacity": 0.26,
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 20,
+          "fontWeight": "700",
+          "marginBottom": 5,
+          "marginLeft": 15,
+          "marginRight": 15,
+          "marginTop": 10,
+        },
+      ]
+    }
+  >
+    Sample name for test
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 15,
+          "marginBottom": 10,
+          "marginLeft": 15,
+          "marginRight": 15,
+          "marginTop": 0,
+        },
+      ]
+    }
+  >
+    sample description of the card
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 15,
+          "fontWeight": "600",
+          "marginBottom": 10,
+          "marginLeft": 15,
+          "marginRight": 15,
+          "marginTop": 0,
+        },
+      ]
+    }
+  >
+    Price: 
+    10200
+     Rs
+  </Text>
+</View>
+`;
