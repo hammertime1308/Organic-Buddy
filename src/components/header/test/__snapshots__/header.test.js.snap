@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Should render empty header 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "backgroundColor": "rgba(76, 154, 42, 1)",
+        "color": "#ffff",
+        "fontSize": 20,
+        "fontWeight": "700",
+        "paddingTop": 10,
+        "textAlign": "center",
+      },
+    ]
+  }
+>
+  
+</Text>
+`;
+
+exports[`Header Should render header with text 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "backgroundColor": "rgba(76, 154, 42, 1)",
+        "color": "#ffff",
+        "fontSize": 20,
+        "fontWeight": "700",
+        "paddingTop": 10,
+        "textAlign": "center",
+      },
+    ]
+  }
+>
+  Sample heading
+</Text>
+`;
