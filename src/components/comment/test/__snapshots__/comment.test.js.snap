@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Comment Should render comment 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgb(208,208,208)",
+      "borderRadius": 5,
+      "elevation": 2,
+      "marginBottom": 10,
+      "marginLeft": 5,
+      "marginRight": 5,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "padding": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "gray",
+            "fontSize": 10,
+            "fontWeight": "bold",
+            "paddingRight": 5,
+          }
+        }
+      >
+        By: 
+        Mandar
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "gray",
+            "fontSize": 10,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Kulkarni
+      </Text>
+    </View>
+    <Text
+      style={
+        Object {
+          "alignSelf": "center",
+          "fontSize": 10,
+          "paddingRight": 10,
+        }
+      }
+    >
+      2021-06-12T10:17:52Z
+    </Text>
+  </View>
+  <Text
+    style={
+      Object {
+        "fontSize": 15,
+        "fontWeight": "700",
+        "paddingBottom": 10,
+        "paddingLeft": 10,
+        "paddingRight": 10,
+      }
+    }
+  >
+    Sample comment for testing purpose
+  </Text>
+</View>
+`;
